@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Praia Atlântica - Administrador </title>
+    <title>Ilha Verde Riviera - Administrador </title>
 
     <!-- Bootstrap -->
     <link href="<?=site_url('vendors/bootstrap/dist/css/bootstrap.min.css');?>" rel="stylesheet">
@@ -50,7 +50,7 @@
               </div>
 
               <div class="clearfix"></div>
-                  <p>© <?=date('Y');?> All Rights Reserved - Praia Atlantica</p>
+                  <p>© <?=date('Y');?> All Rights Reserved - Ilha Verde Riviera</p>
                 </div>
               </div>
             </form>

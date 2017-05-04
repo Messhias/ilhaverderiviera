@@ -44,7 +44,7 @@
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
                                     <label for="obs">Observações</label>
-                                    <textarea id="obs" rows="3" cols="30" style="color: black;" placeholder="Olá, gostaria de receber mais informações sobre o Viva Feliz."></textarea>
+                                    <textarea id="obs" name='obs' rows="3" cols="30" style="color: black;" placeholder="Olá, gostaria de receber mais informações sobre o Viva Feliz."></textarea>
                                 </div><!-- /.form-group -->
                                 <div class="form-group">
                                     <div id="form-slider-status"></div>

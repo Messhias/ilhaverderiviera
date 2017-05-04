@@ -43,15 +43,52 @@ class Welcome extends CI_Controller {
 
 	public function downloadPlant(){
 
+		$message = "Olá, acesso nosso driver para fazer download / visualizar a planta:";
+		$message .="\n https://drive.google.com/open?id=0B-yTn1Lu6L40em9xb1JJbVRPb2c";
+		$message .= "\n Agradecemos o contato";
+
+		$insert = array(
+			'email'			=>	$this->input->post('email'),
+			'plant_link'	=>	"https://drive.google.com/open?id=0B-yTn1Lu6L40em9xb1JJbVRPb2c",
+			'data'			=>  date("Y-m-d"),
+		);
+
 		$this->load->library('email');
         $this->email->clear();
         $this->email->set_newline("\r\n");
-        $this->email->from('messhias@gmail.com');
+        $this->email->from('internet@praias.com');
         $this->email->to($this->input->post('email'));
         $this->email->subject('Praia Atlântica - Download das plantas');
-        $this->email->attach('/pdf/Atlântica_Plantas.pdf');
-        print_r($this->email->send());
+        $this->email->message($message);
+        if($this->email->send()){
+			
+        	if ($this->plant_request_model->insert($insert)) {
+				redirect("/");
+        	}
 
-		
+		}
+	}
+
+	public function contact(){
+
+		$insert = array(
+			'name'			=>	$this->input->post('contact-form-name'),
+			'email'			=>	$this->input->post('contact-form-email'),
+			'message'		=>	$this->input->post('contact-form-message'),
+			'date'			=>  date("Y-m-d"),
+		);
+
+		$this->load->library('email');
+        $this->email->clear();
+        $this->email->set_newline("\r\n");
+        $this->email->from('internet@praias.com');
+        $this->email->to($this->input->post('email'));
+        $this->email->subject('Praia Atlântica - Download das plantas');
+        $this->email->message($this->input->post('contact-form-message'));
+        $this->email->send();
+        $this->contact_form_model->insert($insert);
+
+		redirect('/','refresh');
+
 	}
 }
