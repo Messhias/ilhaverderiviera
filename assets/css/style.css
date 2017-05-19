@@ -1171,6 +1171,12 @@ input[type="text"]:focus, input[type="text"]:active, input[type="email"]:focus, 
   box-shadow: none;
 }
 
+
+.want-more-input-text{
+  background: #D3D3D3;
+  border:1px black solid;
+}
+
 @media (min-width: 992px) and (max-width: 1199px) {
   h1 {
     font-size: 36px;
@@ -1416,4 +1422,24 @@ input[type="text"]:focus, input[type="text"]:active, input[type="email"]:focus, 
 
 #features {
   background-color: #F3F3F3;
+}
+
+
+.box-phone{
+  margin: 20px;
+}
+
+.box-phone a{
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16pt;
+}
+
+
+.box-phone a:hover{
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 16pt;
 }
